@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui;
+}
+
+/* 画像の余白・ズレ完全除去 */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+/* ヘッダー */
+.masthead {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 24px;
+  font-size: 36px;
+  z-index: 100;
+}
+
+/* ここが重要：余白ゼロ */
+.wrap {
+  padding: 0;       /* ← 24 を完全に消す */
+}
+
+/* グリッド */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;            /* ← 完全0 */
+  margin: 0;
+  align-items: end;  /* 下揃え */
+}
+
+/* セル */
+.cell {
+  display: flex;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* 縦位置のみ 3:4 */
+.cell.is-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+/* 縦：トリミングあり */
+.cell.is-portrait img {
+  height: 100%;
+  object-
