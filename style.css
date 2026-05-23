@@ -225,7 +225,7 @@ video {
 
 .panel-ja {
   font-family: "NotoSerifJP", serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: calc(var(--body-ja-size) * var(--ui-scale));
   line-height: 1.5;
   letter-spacing: 0.07em;
@@ -266,16 +266,19 @@ video {
   object-position: center bottom;
 }
 
+/* 縦長は枠いっぱい */
 .cell.is-portrait img,
 .cell.is-portrait video {
   object-fit: cover;
 }
 
+/* 横長は横幅に合わせて、縦は成り行き・下揃え */
 .cell.is-landscape img,
 .cell.is-landscape video {
   object-fit: contain;
 }
 
+/* classが付いていないvideo用 */
 .cell video {
   object-fit: contain;
   object-position: center bottom;
@@ -292,6 +295,14 @@ video {
    Mobile
 ------------------------------ */
 @media (max-width: 768px) {
+  .panel-en {
+    font-size: calc(var(--body-en-size) * var(--ui-scale));
+  }
+
+  .panel-ja {
+    font-size: calc(var(--body-ja-size) * var(--ui-scale));
+  }
+
   .panel-block {
     margin: 16px 0;
   }
