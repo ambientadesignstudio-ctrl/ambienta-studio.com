@@ -279,7 +279,6 @@ video {
 .cell video {
   object-fit: contain;
   object-position: center bottom;
-  pointer-events: none;
 }
 
 .latin {
