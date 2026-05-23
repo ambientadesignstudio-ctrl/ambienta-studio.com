@@ -1,59 +1,323 @@
+/* style.css */
+
+/* ------------------------------
+   Fonts
+------------------------------ */
+@font-face {
+  font-family: "SuisseWorks";
+  src:
+    url("./fonts/SuisseWorks-Medium-WebS.woff2") format("woff2"),
+    url("./fonts/SuisseWorks-Medium-WebXL.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NotoSerifJP";
+  src: url("./fonts/NotoSerifJP-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NotoSerifJP";
+  src: url("./fonts/NotoSerifJP-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------------
+   Tokens
+------------------------------ */
+:root {
+  --ui-scale: 0.85;
+  --ui-type: 30px;
+  --ui-logo: 26px;
+
+  --pad-x: 12px;
+  --pad-y: 10px;
+
+  --panel-max: 1200px;
+  --panel-top: 25px;
+  --panel-bottom: 25px;
+
+  --body-en-size: 28.8px;
+  --body-ja-size: 27.45px;
+
+  --bar-h: 56px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --ui-scale: 0.7;
+  }
+}
+
+/* ------------------------------
+   Base
+------------------------------ */
+::selection {
+  background: #b7d5ff;
+  color: #000;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, system-ui;
+  font-family: "SuisseWorks", "NotoSerifJP", serif;
+  background: #fff;
+  color: #000;
 }
 
-/* 画像の余白・ズレ完全除去 */
-img {
+img,
+video {
   display: block;
-  width: 100%;
-  height: auto;
   margin: 0;
 }
 
-/* ヘッダー */
+/* ------------------------------
+   Header
+------------------------------ */
 .masthead {
   position: sticky;
   top: 0;
+  z-index: 1000;
   background: #fff;
-  padding: 24px;
-  font-size: 36px;
-  z-index: 100;
-}
-
-/* ここが重要：余白ゼロ */
-.wrap {
-  padding: 0;       /* ← 24 を完全に消す */
-}
-
-/* グリッド */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;            /* ← 完全0 */
   margin: 0;
-  align-items: end;  /* 下揃え */
-}
-
-/* セル */
-.cell {
+  font-weight: 500;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+}
+
+.masthead-bar {
+  padding: var(--pad-y) var(--pad-x);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8.5px;
+  background: #fff;
+  min-height: var(--bar-h);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  display: block;
+  height: calc(var(--ui-logo) * var(--ui-scale));
+  width: auto;
   margin: 0;
+}
+
+/* ------------------------------
+   Nav
+------------------------------ */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__item {
+  appearance: none;
+  border: 0;
+  background: transparent;
   padding: 0;
+  margin: 0;
+
+  text-decoration: none;
+  color: #000;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: calc(var(--ui-type) * var(--ui-scale));
+  line-height: 1;
+  letter-spacing: 0.005em;
+
+  display: inline-flex;
+  align-items: center;
+
+  transform: translateY(2px);
+  -webkit-font-smoothing: antialiased;
+
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.nav__item::after {
+  content: ",";
+  margin-right: 0.06em;
+}
+
+.nav__item:last-child::after {
+  content: "";
+  margin-right: 0;
+}
+
+.nav__item.is-active::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -0.12em;
+  right: -0.12em;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1.2em;
+  background: #b7d5ff;
+}
+
+/* ------------------------------
+   Expandable Panel
+------------------------------ */
+.masthead-panel {
+  max-height: 0;
+  transition: max-height 260ms ease;
+  will-change: max-height;
   overflow: hidden;
 }
 
-/* 縦位置のみ 3:4 */
-.cell.is-portrait {
-  aspect-ratio: 3 / 4;
+.masthead-panel__inner {
+  width: 100%;
+  max-width: min(96vw, var(--panel-max));
+  padding: 6px var(--pad-x) 8px;
+  max-height: calc(100vh - var(--bar-h));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* 縦：トリミングあり */
-.cell.is-portrait img {
+.masthead-panel__content {
+  font-kerning: normal;
+  font-variant-east-asian: proportional-width;
+  font-feature-settings: "palt" 1;
+  -webkit-font-smoothing: auto;
+}
+
+/* ------------------------------
+   Panel Text
+------------------------------ */
+.panel-block {
+  width: 100%;
+  margin: var(--panel-top) 0 var(--panel-bottom);
+}
+
+.panel-en {
+  font-family: "SuisseWorks", serif;
+  font-weight: 400;
+  font-size: calc(var(--body-en-size) * var(--ui-scale));
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  margin: 0 0 16px 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.panel-ja {
+  font-family: "NotoSerifJP", serif;
+  font-weight: 600;
+  font-size: calc(var(--body-ja-size) * var(--ui-scale));
+  line-height: 1.5;
+  letter-spacing: 0.07em;
+  margin: 0 0 16px 0;
+}
+
+.panel-block > :last-child {
+  margin-bottom: 0;
+}
+
+/* ------------------------------
+   Grid
+------------------------------ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  align-items: end;
+  margin: 0;
+}
+
+.cell {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: #fff;
+}
+
+.cell img,
+.cell video {
+  width: 100%;
   height: 100%;
-  object-
+  display: block;
+  object-position: center bottom;
+}
+
+/* 縦長は枠いっぱい */
+.cell.is-portrait img,
+.cell.is-portrait video {
+  object-fit: cover;
+}
+
+/* 横長は横幅に合わせて、縦は成り行き・下揃え */
+.cell.is-landscape img,
+.cell.is-landscape video {
+  object-fit: contain;
+}
+
+/* classが付いていないvideo用：横長jpgと同じ扱い */
+.cell video {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.latin {
+  font-family: "SuisseWorks", serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ------------------------------
+   Mobile
+------------------------------ */
+@media (max-width: 768px) {
+  .panel-en {
+    font-size: calc(var(--body-en-size) * var(--ui-scale));
+  }
+
+  .panel-ja {
+    font-size: calc(var(--body-ja-size) * var(--ui-scale));
+  }
+
+  .panel-block {
+    margin: 16px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cell {
+    aspect-ratio: auto;
+    display: block;
+  }
+
+  .cell img,
+  .cell video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
