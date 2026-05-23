@@ -5,194 +5,74 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Studio Ambienta.</title>
-
     <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
-
     <header class="masthead" id="masthead">
-
-      <div
-        class="masthead-panel"
-        id="mastheadPanel"
-        aria-hidden="true"
-      >
+      <div class="masthead-panel" id="mastheadPanel" aria-hidden="true">
         <div class="masthead-panel__inner">
-          <div
-            class="masthead-panel__content"
-            id="panelContent"
-          ></div>
+          <div class="masthead-panel__content" id="panelContent"></div>
         </div>
       </div>
 
       <div class="masthead-bar">
-
-        <a
-          class="brand"
-          href="./index.html"
-          aria-label="Ambienta. studio home"
-        >
-          <img
-            class="logo"
-            src="./logo.svg"
-            alt="Ambienta. studio"
-          />
+        <a class="brand" href="./index.html" aria-label="Ambienta. studio home">
+          <img class="logo" src="./logo.svg" alt="Ambienta. studio" />
         </a>
 
         <nav class="nav" aria-label="Primary">
-
-          <button
-            class="nav__item"
-            type="button"
-            data-panel="about"
-            aria-expanded="false"
-          >
-            About
-          </button>
-
-          <button
-            class="nav__item"
-            type="button"
-            data-panel="contact"
-            aria-expanded="false"
-          >
-            Contact
-          </button>
-
-          <a
-            class="nav__item"
-            href="https://ambienta.base.shop"
-            target="_blank"
-            rel="noopener"
-          >
-            Shop
-          </a>
-
+          <button class="nav__item" type="button" data-panel="about" aria-expanded="false">About</button>
+          <button class="nav__item" type="button" data-panel="contact" aria-expanded="false">Contact</button>
+          <a class="nav__item" href="https://ambienta.base.shop" target="_blank" rel="noopener">Shop</a>
         </nav>
-
       </div>
     </header>
 
     <main>
-
       <section class="grid" id="grid">
+        <div class="cell"><img src="./001.jpg" alt="" /></div>
+        <div class="cell"><img src="./002.jpg" alt="" /></div>
+        <div class="cell"><img src="./003.jpg" alt="" /></div>
+        <div class="cell"><img src="./004.jpg" alt="" /></div>
+        <div class="cell"><img src="./005.jpg" alt="" /></div>
 
         <div class="cell">
-          <img src="./001.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./002.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./003.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./004.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./005.jpg" alt="" />
-        </div>
-
-        <!-- VIDEO -->
-        <div class="cell">
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto"
-          >
-            <source
-              src="./006.mp4"
-              type="video/mp4"
-            />
+          <video autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture>
+            <source src="./006.mp4" type="video/mp4" />
           </video>
         </div>
 
-        <div class="cell">
-          <img src="./007.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./008.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./009.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./010.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./011.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./012.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./013.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./014.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./015.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./016.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./017.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./018.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./019.jpg" alt="" />
-        </div>
-
-        <div class="cell">
-          <img src="./020.jpg" alt="" />
-        </div>
-
+        <div class="cell"><img src="./007.jpg" alt="" /></div>
+        <div class="cell"><img src="./008.jpg" alt="" /></div>
+        <div class="cell"><img src="./009.jpg" alt="" /></div>
+        <div class="cell"><img src="./010.jpg" alt="" /></div>
+        <div class="cell"><img src="./011.jpg" alt="" /></div>
+        <div class="cell"><img src="./012.jpg" alt="" /></div>
+        <div class="cell"><img src="./013.jpg" alt="" /></div>
+        <div class="cell"><img src="./014.jpg" alt="" /></div>
+        <div class="cell"><img src="./015.jpg" alt="" /></div>
+        <div class="cell"><img src="./016.jpg" alt="" /></div>
+        <div class="cell"><img src="./017.jpg" alt="" /></div>
+        <div class="cell"><img src="./018.jpg" alt="" /></div>
+        <div class="cell"><img src="./019.jpg" alt="" /></div>
+        <div class="cell"><img src="./020.jpg" alt="" /></div>
       </section>
-
     </main>
 
-    <!-- About -->
     <template id="tpl-about">
       <div class="panel-text">
-
         <div class="panel-block">
-
           <p class="panel-en">
             Graphic designer and artist. Born in 1992.
             Graduated from Musashino Art University.
-
             Working across graphic design and illustration,
             with a practice spanning visual identity,
             printed matter, and photographic expression.
-
             Under the theme “Life in nonsense,”
             the work explores subtle irregularities
             and quiet beauty found in everyday life
             as points of departure for creation.
-
             Founder of Ambienta.
             Beginning with the operation of an antique shop,
             the practice has expanded into spatial design,
@@ -203,32 +83,25 @@
           <p class="panel-ja">
             グラフィックデザイナー、アーティスト。
             1992年生まれ。武蔵野美術大学卒業。
-
             グラフィックデザインとイラストレーションを軸に、
             ビジュアルアイデンティティ、印刷物、
             写真表現などを横断しながら活動している。
-
             「ノンセンスの中にある生活」をテーマに、
             日常の中に潜む違和感や美しさを
             手がかりに制作を行う。
-
             <span class="latin">Ambienta.</span> 主宰。
             古道具屋としての活動を起点に、
             空間、プロダクト、グラフィックへと
             領域を広げながら、
             デザイン業務へと発展させている。
           </p>
-
         </div>
       </div>
     </template>
 
-    <!-- Contact -->
     <template id="tpl-contact">
       <div class="panel-text">
-
         <div class="panel-block">
-
           <p class="panel-en">
             Ambienta. studio<br />
             Shinjuku, Tokyo, Japan
@@ -241,15 +114,13 @@
 
           <p class="panel-en">
             Instagram<br />
-            @studio_ambienta_
+            @studio_ambienta_<br />
             @a_m_b_i_e_n_t_a
           </p>
-
         </div>
       </div>
     </template>
 
     <script src="./script.js"></script>
-
   </body>
 </html>
