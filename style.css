@@ -331,12 +331,12 @@ video {
   transform: translateZ(0);
 
   transition:
-    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .is-scrolling .grid {
-  filter: blur(0.6px);
+  filter: blur(0.8px);
 
   transform:
     translateY(2px)
