@@ -170,5 +170,5 @@ window.addEventListener("scroll", () => {
 
   scrollTimer = setTimeout(() => {
     document.body.classList.remove("is-scrolling");
-  }, 60);
+  }, 140);
 });
