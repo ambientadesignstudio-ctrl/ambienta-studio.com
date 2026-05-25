@@ -327,15 +327,14 @@ video {
 }
 
 .grid {
-  transition:
-    filter 0.35s ease,
-    transform 0.35s ease;
-
+  transition: filter 0.18s ease-out, transform 0.18s ease-out;
   will-change: transform, filter;
   transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .is-scrolling .grid {
+  transition: none;
   filter: blur(2px);
   transform: scale(1.003);
 }
