@@ -156,3 +156,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 });
+
+let scrollTimer;
+
+window.addEventListener("scroll", () => {
+  document.body.classList.add("is-scrolling");
+
+  clearTimeout(scrollTimer);
+
+  scrollTimer = setTimeout(() => {
+    document.body.classList.remove("is-scrolling");
+  }, 120);
+});
