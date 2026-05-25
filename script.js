@@ -164,11 +164,7 @@ window.addEventListener("scroll", () => {
 
   clearTimeout(scrollTimer);
 
-  requestAnimationFrame(() => {
-    document.body.classList.remove("is-scrolling");
-  });
-
   scrollTimer = setTimeout(() => {
     document.body.classList.remove("is-scrolling");
-  }, 140);
+  }, 260);
 });
