@@ -158,13 +158,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 let scrollTimer;
+let isScrolling = false;
 
 window.addEventListener("scroll", () => {
-  document.body.classList.add("is-scrolling");
+  if (!isScrolling) {
+    document.body.classList.add("is-scrolling");
+    isScrolling = true;
+  }
 
   clearTimeout(scrollTimer);
 
   scrollTimer = setTimeout(() => {
     document.body.classList.remove("is-scrolling");
-  }, 260);
+    isScrolling = false;
+  }, 120);
 });
