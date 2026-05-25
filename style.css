@@ -325,3 +325,16 @@ video {
     object-fit: contain;
   }
 }
+
+.grid img {
+  transition:
+    filter 0.25s ease,
+    transform 0.25s ease;
+
+  will-change: transform, filter;
+}
+
+.is-scrolling .grid img {
+  filter: blur(0.8px);
+  transform: scale(1.01);
+}
