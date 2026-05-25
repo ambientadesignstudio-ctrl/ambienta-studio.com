@@ -327,14 +327,21 @@ video {
 }
 
 .grid {
-  transition: filter 0.18s ease-out, transform 0.18s ease-out;
+  transition:
+    filter 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+
   will-change: transform, filter;
   transform: translateZ(0);
+
   backface-visibility: hidden;
 }
 
 .is-scrolling .grid {
+  filter: blur(2px);
+  transform: scale(1.002);
   transition: none;
+}
   filter: blur(2px);
   transform: scale(1.003);
 }
