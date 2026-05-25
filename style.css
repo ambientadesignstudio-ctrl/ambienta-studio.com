@@ -337,7 +337,7 @@ video {
 }
 
 .is-scrolling .grid {
-  filter: blur(0.7px);
+  filter: blur(2px);
   transform:
     translateY(1px)
     scale(1.002);
