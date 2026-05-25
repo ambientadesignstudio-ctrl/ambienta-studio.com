@@ -157,19 +157,3 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 });
 
-let scrollTimer;
-let isScrolling = false;
-
-window.addEventListener("scroll", () => {
-  if (!isScrolling) {
-    document.body.classList.add("is-scrolling");
-    isScrolling = true;
-  }
-
-  clearTimeout(scrollTimer);
-
-  scrollTimer = setTimeout(() => {
-    document.body.classList.remove("is-scrolling");
-    isScrolling = false;
-  }, 120);
-});
