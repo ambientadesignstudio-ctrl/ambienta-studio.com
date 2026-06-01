@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const img = cell.querySelector("img");
       if (!img || !img.naturalWidth || !img.naturalHeight) return;
 
-      const isLandscape = img.naturalWidth > img.naturalHeight;
+      const isLandscape = img.naturalWidth >= img.naturalHeight;
       cell.dataset.orientation = isLandscape ? "landscape" : "portrait";
       cell.classList.toggle("is-landscape", isLandscape);
       cell.classList.toggle("is-portrait", !isLandscape);
